@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   localstack:
@@ -13,8 +13,8 @@ services:
       - SERVICES=dynamodb
       - AWS_DEFAULT_REGION=us-east-1
     ports:
-      - '4566-4583:4566-4583'
+      - "4566-4583:4566-4583"
     volumes:
       - ${TEMPDIR:-/tmp/localstack}:/tmp/localstack
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./script/localstack/dynamodb/init-dynamodb.sh:/docker-entrypoint-initaws.d/init-dynamodb.sh
+      - ./script/init-dynamodb.sh:/docker-entrypoint-initaws.d/init-dynamodb.sh
