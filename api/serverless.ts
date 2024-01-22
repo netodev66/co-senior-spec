@@ -18,6 +18,19 @@ const serverlessConfiguration: AWS = {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
     },
+    iamRoleStatements: [
+      {
+        Effect: "Allow",
+        Action: [
+          "dynamodb:DescribeTable",
+          "dynamodb:Query",
+          "dynamodb:Scan",
+          "dynamodb:GetItem",
+        ],
+        //use your account ID and tableName
+        Resource: "arn:aws:dynamodb:us-east-1:*:*",
+      },
+    ],
     environment: {
       AWS_NODEJS_CONNECTION_REUSE_ENABLED: "1",
       NODE_OPTIONS: "--enable-source-maps --stack-trace-limit=1000",
