@@ -3,7 +3,7 @@ import { Text, View } from 'native-base';
 export default () => {
   return (
     <View>
-      <Text>hello inferno</Text>
+      <Text>hello world</Text>
     </View>
   );
 };
